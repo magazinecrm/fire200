@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "vercel-build": "npm run prisma:generate && npm run prisma:migrate && next build",
+    "vercel-build": "prisma generate && npm run migrate:deploy && next build",
     "generate-client": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
     "migrate": "DATABASE_URL=\"$MIGRATE_DATABASE_URL\" prisma migrate deploy",
     "lint": "next lint"
