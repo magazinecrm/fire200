@@ -6,8 +6,32 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+{
+  "name": "fire200",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "vercel-build": "npm run prisma:generate && npm run prisma:migrate && next build",
-    "prisma:generate": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate"
+    "prisma-generate": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate",
+    "migrate": "DATABASE_URL=\"$MIGRATE_DATABASE_URL\" prisma migrate deploy"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.2.1",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "prisma": "^4.2.1"
+  }
+}
+
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
